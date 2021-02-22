@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb://localhost:27017/editable_movies_list_test"
+}
