@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import './App.css';
 import Container from "@material-ui/core/Container";
 import blue from '@material-ui/core/colors/blue';
 import Typography from "@material-ui/core/Typography";
-import {SimpleCard, MovieForm} from "./components";
+import {SimpleCard, MovieForm} from "../index";
 
 const color = blue[50];
 const style = {
@@ -34,16 +33,12 @@ export default class App extends Component {
                     ...this.state,
                     movies: result
                 });
-                console.log("response: ", result);
             },
-            // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-            // чтобы не перехватывать исключения из ошибок в самих компонентах.
             (error) => {
                 this.setState({
                     ...this.state,
                     error
                 });
-                console.log("error: ", error);
             }
           )
           .catch(
@@ -52,13 +47,11 @@ export default class App extends Component {
                     ...this.state,
                     error
                 });
-                console.log("error: ", error);
             });
 
     };
 
     handleMovieDelete = (movieID) => {
-        console.log("movieID: ", movieID);
         fetch(`http://localhost:5000/api/movies/${movieID}`, {method: "delete"})
           .then(res => res.json())
           .then(
@@ -68,14 +61,12 @@ export default class App extends Component {
                     movies: this.state.movies.filter(item => item._id !== movieID),
                     request: result.msg
                 });
-                console.log("response: ", result);
             },
             (error) => {
                 this.setState({
                     ...this.state,
                     error: error
                 });
-                console.log("error: ", error);
             }
           )
           .catch(
@@ -84,7 +75,6 @@ export default class App extends Component {
                     ...this.state,
                     error: error
                 });
-                console.log("error: ", error);
             });
     };
 
@@ -107,14 +97,12 @@ export default class App extends Component {
                         result
                     ]
                 });
-                console.log("response: ", result);
             },
             (error) => {
                 this.setState({
                     ...this.state,
                     error: error
                 });
-                console.log("error: ", error);
             }
           )
           .catch(
@@ -123,13 +111,11 @@ export default class App extends Component {
                     ...this.state,
                     error: error
                 });
-                console.log("error: ", error);
             });
     };
 
     render() {
         const {movies} = this.state;
-        console.log("state: ", this.state);
         return (
           <div className="App">
               <Container maxWidth="sm">

@@ -31,7 +31,6 @@ app.use(express.json());
 
 
 // DB Config
-// const db = require('./config/config').mongoURI;
 const db = config.get('mongoURI');
 
 // Connect to Mongo

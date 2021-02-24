@@ -80,8 +80,6 @@ export default function MovieForm(props) {
 
     const handleChange = (prop) => (event, newValue) => {
         setValues({...values, [prop]: event.target.value || newValue});
-        // console.log("values: ", values);
-        // console.log("event: ", event.target.value);
     };
 
     const handleSubmit = () => {
@@ -112,7 +110,6 @@ export default function MovieForm(props) {
                 <ExpandMoreIcon/>
             </IconButton>}
           />
-
           <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent>
                   <form className={classes.form} noValidate autoComplete="off">
@@ -161,9 +158,7 @@ export default function MovieForm(props) {
                             }}
                           />
                       </FormControl>
-                      <Typography id="discrete-slider-custom" gutterBottom>
-                          Rating
-                      </Typography>
+                      <Typography id="discrete-slider-custom" gutterBottom>Rating</Typography>
                       <Slider
                         defaultValue={0}
                         aria-labelledby="discrete-slider-custom"
