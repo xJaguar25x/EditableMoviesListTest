@@ -11,14 +11,14 @@ const MovieSchema = new Schema({
         type: String
     },
     duration: {
-        type: String
+        type: Number
     },
     rating: {
-        type: String
+        type: Number
     },
     released_date: {
-        type: Date,
-        default: Date.now
+        type: Number,
+        default: new Date().getFullYear()
     }
 });
 

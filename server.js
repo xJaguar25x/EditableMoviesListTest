@@ -6,7 +6,7 @@ const movieRouter = require('./routes/api/movies');
 
 const app = express();
 
-/*const cors = require('cors');
+const cors = require('cors');
 
 // CORS allow for localhost
 const whitelist = ['http://localhost:3000', 'http://localhost:3080']; //white list consumers
@@ -24,7 +24,7 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'device-remember-token', 'Access-Control-Allow-Origin', 'Origin', 'Accept', 'x-auth-token']
 };
 
-app.use(cors(corsOptions)); //adding cors middleware to the express with above configurations*/
+app.use(cors(corsOptions)); //adding cors middleware to the express with above configurations
 
 // Bodyparser Middleware
 app.use(express.json());
